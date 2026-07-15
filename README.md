@@ -15,7 +15,7 @@ The implementation follows the supplied Figma designs and includes a lightweight
 - Local JSON data
 - Browser `localStorage`
 
-## Getting Started
+## Run instructions
 
 ### Prerequisites
 
@@ -42,7 +42,6 @@ This starts:
 - React client: `http://localhost:5173`
 - Express API: `http://localhost:3001`
 
-If port `5173` is already in use, Vite will automatically select another available port.
 
 ### Production Build
 
@@ -61,6 +60,24 @@ Then, in another terminal:
 ```bash
 npm run preview
 ```
+## Clean-Clone Verification
+
+To verify the repository exactly as a reviewer would receive it, clone it into a new folder and run:
+
+```bash
+git clone https://github.com/SalmaSliem/react-security-bundle-builder.git clean-bundle-test
+cd clean-bundle-test
+npm ci
+npm run build
+npm run dev
+```
+
+Then verify:
+
+- The React application loads from the Vite URL shown in the terminal.
+- `http://localhost:3001/api/health` returns a successful response.
+- `http://localhost:3001/api/catalog` returns the catalog JSON.
+- Product selection, variants, quantities, totals, and persistence work correctly.
 
 ## Available Scripts
 
@@ -98,7 +115,7 @@ The backend implementation is located in:
 server/index.cjs
 ```
 
-## Key Functionality
+## Key Features
 
 - Data-driven product rendering
 - Responsive desktop and mobile layouts
@@ -166,10 +183,11 @@ src/
 - `localStorage` is used because persistence does not require authentication or a database.
 - The checkout interaction is a prototype and does not process real payments.
 
-## Limitations
+## Limitations Notes
 
 - The API must be running for the client to load the catalog.
 - Saved configurations are browser-specific and are not synchronized across devices.
+- The `N selected` counter remains visible on closed accordion steps in the desktop frames. Hiding it only for closed desktop steps is not completed.
 - Authentication, database storage, and payment processing are outside the project scope.
 
 ## Repository

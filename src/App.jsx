@@ -22,6 +22,7 @@ function getDefaultOpenStepId() {
 
 function createInitialConfiguration() {
   return {
+    openStepId: 'cameras',
     openStepId: getDefaultOpenStepId(),
     activeVariants: {
       'wyze-cam-v4': 'white',
@@ -30,6 +31,8 @@ function createInitialConfiguration() {
       'wyze-battery-cam-pro': 'white',
     },
     quantities: {
+      'wyze-cam-v4::white': 1,
+      'wyze-cam-pan-v3::white': 2,
       'cam-unlimited::default': 1,
       'motion-sensor::default': 2,
       'sense-hub::default': 1,
