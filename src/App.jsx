@@ -22,7 +22,6 @@ function getDefaultOpenStepId() {
 
 function createInitialConfiguration() {
   return {
-    openStepId: 'cameras',
     openStepId: getDefaultOpenStepId(),
     activeVariants: {
       'wyze-cam-v4': 'white',
