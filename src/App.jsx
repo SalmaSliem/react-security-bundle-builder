@@ -2,7 +2,6 @@ import { useMemo, useState } from 'react';
 
 import AccordionStep from './components/AccordionStep';
 import ReviewPanel from './components/ReviewPanel';
-import catalog from './data/catalog.json';
 
 const STORAGE_KEY = 'security-bundle-builder-js-v1';
 
@@ -90,7 +89,7 @@ function readSavedConfiguration() {
   }
 }
 
-export default function App() {
+export default function App({ catalog }) {
   const [configuration, setConfiguration] = useState(readSavedConfiguration);
   const [saveMessage, setSaveMessage] = useState('');
   const [checkoutOpen, setCheckoutOpen] = useState(false);
